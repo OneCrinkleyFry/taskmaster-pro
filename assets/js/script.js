@@ -229,7 +229,13 @@ $("#trash").droppable({
 
 $("#modalDueDate").datepicker( {
   minDate: 1
-});
+}, 5000);
+
+setInterval(function () {
+  $(".card .list-group-item").each(function (el) {
+    auditTask(el);
+  });
+}, 1800000);
 
 // load tasks for the first time
 loadTasks();
